@@ -34,7 +34,7 @@ then give an artwork which is going to be attached like this:
 
 ![图片4](pages/eye.png)
 
-(it should be a prefab. Animator is supported but only wokr for integer parameters in current)
+(it should be a prefab. Animator is supported but only work for integer parameters in current)
 
 
 after finish setting for the little white man
