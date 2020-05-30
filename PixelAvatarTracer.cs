@@ -71,9 +71,8 @@ namespace Tools.PixelAvatarTracing{
 
         // Update is called once per frame
         void Update(){
-            //if follow animator set to be true,the tracer will try to update the attached gameobject's animator state;
             Dictionary<Color,int> counter = new Dictionary<Color,int>();
-  
+ 
             _currentSprite = _spriteRenderer.sprite;
             if (!_pixelAvatarTracingSystem.SpriteAttachedPosition.ContainsKey(_currentSprite)){
                 Debug.Log("generate");
@@ -116,6 +115,9 @@ namespace Tools.PixelAvatarTracing{
                         }
 
                         var go = _attachedPixelArts[currentColor][listIterator];
+                        if (go.activeSelf == false){
+                            go.SetActive(true);
+                        }
                         counter[pixel.PixelColor]++;
                         float pixelPerUnitRatio = 1 / _currentSprite.pixelsPerUnit;
                         if (go != null){
@@ -152,6 +154,15 @@ namespace Tools.PixelAvatarTracing{
                         }
                            
                     
+                    }
+                }
+            }
+            //disable unused gameobject
+            foreach (var kp in counter){
+                if (_attachedPixelArts.ContainsKey(kp.Key)){
+                    var list = _attachedPixelArts[kp.Key];
+                    for (int i = kp.Value; i < list.Count; i++){
+                        list[i].SetActive(false);
                     }
                 }
             }
