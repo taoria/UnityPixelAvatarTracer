@@ -152,8 +152,6 @@ namespace Tools.PixelAvatarTracing{
                             Debug.LogError("can't find game object attached to this character.");
                             
                         }
-                           
-                    
                     }
                 }
             }

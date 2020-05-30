@@ -6,7 +6,7 @@ download the code and drag the folder into your project
 
 # Basic Idea
 
-let sprite use a specified trace map to trace the position where other artwork or gameobject to be attached on.
+let sprite use a specified trace map to trace the position where other artworks or gameobjects to be attached on.
 
 # Usage
 
@@ -57,15 +57,20 @@ should work fine
 
 Tracing Paris is a tuple 
 
+
 **Color** refers to the color in the trace map
 
 **Prefab** is the gameobject ot be attached
 
 **Offset** is the offset of the attached gameobject offset from the center.
 
+note that color of the pixel in the trace map could be equal.And it will generate two or more gameobject properly.
+
 choose **Follow Animator** if you want the traced gameobject's animator synchronize with the avatar's animator  
 
-choose **Flip When Flip** if you want Flip the traced gameobject when traced game object is fliped
+choose **Flip When Flip** if you want Flip the traced gameobject's sprite when avatar's sprite is fliped
+
+
 
 
 
